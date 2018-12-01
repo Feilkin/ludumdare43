@@ -9,6 +9,7 @@ function Knife:initialize()
 	self.lifetime = 5
 	Projectile.initialize(self, vector(10, 4), "knife")
 	self.team = "player"
+	self.damage = 1
 end
 
 return Knife

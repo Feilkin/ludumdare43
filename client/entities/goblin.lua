@@ -14,6 +14,8 @@ function Goblin:initialize()
 	self.team = "goblin"
 	self.animation = Animation("res/animations/goblin.lua", "idle")
 	self.sprite = self.animation:getFrame()
+	self.health = 3
+	self.souls = 10
 end
 
 function Goblin:getQuadName()

@@ -2,6 +2,17 @@
 
 write stuff here
 
+## TODO
+
+ * Art
+ * AI
+ * Combat
+ * Game mechanics
+ * Boss(es)
+ * Lore
+ * More Art
+ * Super secret ingredient
+
 ## 3rd party stuff and sources
 
 ### Libraries (game/client)

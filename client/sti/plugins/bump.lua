@@ -99,7 +99,8 @@ return {
 								width      = tile.width,
 								height     = tile.height,
 								layer      = layer,
-								properties = tile.properties
+								properties = tile.properties,
+								type       = tile.type,
 							}
 
 							world:add(t, t.x, t.y, t.width, t.height)
@@ -126,7 +127,7 @@ return {
 								width      = obj.width,
 								height     = obj.height,
 								layer      = layer,
-								properties = obj.properties
+								properties = obj.properties,
 							}
 
 							if obj.gid then

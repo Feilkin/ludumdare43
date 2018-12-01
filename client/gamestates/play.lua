@@ -11,11 +11,14 @@ local Goblin = require "entities.goblin"
 local Spritesheet = require "spritesheet"
 local Particle = require "particle"
 local Knife = require "projectiles.knife"
+local Soul = require "particles.soul"
 
 local animationSystem = require "systems.animations"
 local lifetimeSystem = require "systems.lifetimes"
 local physicsSystem = require "systems.physics"
 local spriteRenderer = require "systems.spriterenderer"
+local deathSystem = require "systems.deaths"
+local homingSystem = require "systems.homings"
 
 local monsters = {}
 monsters["Goblin"] = Goblin
@@ -23,16 +26,37 @@ monsters["Goblin"] = Goblin
 local blood_sprites = { "blood_1", "blood_2", "blood_3" }
 local dust_sprites = { "dust_1", "dust_2", "dust_3" }
 
-Signal.register("projectile_hit", function(p, col)
-	local b = p.body
-	for i = 1, love.math.random(50, 75) do
+Signal.register("spawn_blood", function(e, col, amount)
+	local b = e.body
+	local sp = vector(1,1)
+	for i = 1, amount do
 		local sprite = blood_sprites[love.math.random(1, #blood_sprites)]
-		local pp = Particle(vector(1,1), sprite)
-		pp.body:setPos(b.position.x + (p.flip_x and 0 or b.size.x), b.position.y)
-		pp.body.speed.y = love.math.random(-50, 50)
-		pp.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
-		pp.time_left = love.math.random() * 5 + 2
-		play.world:add(pp)
+		local p = Particle(sp, sprite)
+		p.body:setPos(b.position.x + (e.flip_x and 0 or b.size.x), b.position.y)
+		p.body.speed.y = love.math.random(-50, 50)
+		p.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
+		p.time_left = love.math.random() * 1 + 1
+		play.world:add(p)
+	end
+end)
+
+Signal.register("projectile_hit", function(p, col)
+	if col.other.is_entity then
+		Timer.during(1, function()
+			Signal.emit("spawn_blood", p, col, love.math.random(1, 5))
+		end)
+	else
+		local b = p.body
+		local sp = vector(1,1)
+		for i = 1, love.math.random(10, 20) do
+			local sprite = dust_sprites[love.math.random(1, #dust_sprites)]
+			local pp = Particle(sp, sprite)
+			pp.body:setPos(b.position.x + (p.flip_x and 0 or b.size.x), b.position.y)
+			pp.body.speed.y = love.math.random(-50, 50)
+			pp.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
+			pp.time_left = love.math.random() * 1 + 0.5
+			play.world:add(pp)
+		end
 	end
 end)
 
@@ -55,16 +79,29 @@ end)
 Signal.register("play_sound", function(slot, sound_name)
 	local sound = play.sounds[slot][sound_name]
 	sound.source:play()
-	if sound.message then print(sound.message) end
+	if sound.message then
+		play.player.message = sound.message
+
+		if sound.message_duration then
+			Timer.during(sound.message_duration, function()
+				play.player.message = sound.message
+			end)
+		end
+	end
 end)
 
 Signal.register("player_throw", function()
-	local sound = play.sounds["effects"]["throw"]
-	sound.source:play()
+	play.sounds["effects"]["throw"].source:play()
+end)
+
+Signal.register("entity_jump", function(entity)
+	if entity == play.player then
+		play.sounds["effects"]["player_jump"].source:play()
+	end
 end)
 
 Signal.register("projectile_hit", function(p, col)
-	local sound 
+	local sound
 	if col.other.is_entity then
 		sound = play.sounds["effects"]["hit"]
 	else
@@ -80,10 +117,26 @@ Signal.register("entity_land", function(e, col, speed_y)
 	end
 end)
 
+Signal.register("enemy_died", function(e)
+	-- spawn souls
+	local x, y = e.body:getPos()
+	local w, h = e.body:getSize()
+	for i = 1, e.souls do
+		local s = Soul()
+		s.time_left = 25
+		s.body:setPos(x + w / 2, y + 2)
+		Timer.after(0.3, function()
+			s.homing_target = play.player
+			play.world:addEntity(s)
+		end)
+		play.world:add(s)
+	end
+end)
+
 function play:loadSpritesheet(name)
 	local data = love.filesystem.load("res/sprites/" .. name ..".lua")
 	local sheet = Spritesheet("res/sprites/" .. name ..".png", data())
-	local batch = sheet:newSpritebatch()
+	local batch = sheet:newSpritebatch( 2048, "stream")
 
 	self.spritesheets[name] = sheet
 	self.spritebatches[name] = batch
@@ -146,14 +199,14 @@ function play:loadMap(filename)
 end
 
 function play:initWorld()
-	local bump_world = bump.newWorld(32)
+	local bump_world = bump.newWorld(16)
 	local world = tiny.world()
 
 	world.bump_world = bump_world
 	world.sheets = self.spritesheets
 	world.batches = self.spritebatches
 
-	world:add(animationSystem, physicsSystem, spriteRenderer, lifetimeSystem)
+	world:add(animationSystem, physicsSystem, homingSystem, spriteRenderer, lifetimeSystem, deathSystem)
 	world:add(self.player)
 
 	self.world = world
@@ -192,7 +245,7 @@ end
 function play:update(dt)
 	self:handle_input(dt)
 	self.world:update(dt)
-
+	self.map:update(dt)
 	self.player:update(dt)
 
 	-- update camera
@@ -205,19 +258,24 @@ function play:handle_input(dt)
 	local player = self.player
 	if love.keyboard.isDown("right") then
 		player.body.speed.x = 75
-		if player.animation.current_animation == "idle" then
+		if player.body.on_ground and
+			((player.animation.current_animation == "idle") or
+			(player.animation.current_animation == "fall")) then
 			player.animation:switch("walk")
 		end
 		player.flip_x = false
 	elseif love.keyboard.isDown("left") then
 		player.body.speed.x = -75
-		if player.animation.current_animation == "idle" then
+		if player.body.on_ground and
+			((player.animation.current_animation == "idle") or
+			(player.animation.current_animation == "fall")) then
 			player.animation:switch("walk")
 		end
 		player.flip_x = true
 	else
 		player.body.speed.x = 0
-		if player.animation.current_animation == "walk" then
+		if (player.animation.current_animation == "walk") or
+			(player.animation.current_animation == "fall") then
 			player.animation:switch("idle")
 		end
 	end
@@ -249,6 +307,14 @@ function play:draw()
 	love.graphics.origin()
 	self.camera:attach()
 		self:draw_entities()
+
+		if self.player.message then
+			local msg = self.player.message
+			local x, y = self.player.body:getPos()
+			local w = FONTS.body:getWidth(msg)
+			love.graphics.print(msg, x - w / 2, y - 12)
+			self.player.message = nil
+		end
 	self.camera:detach()
 	love.graphics.pop()
 

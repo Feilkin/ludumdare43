@@ -22,7 +22,7 @@ function Particle:onCollide(col)
 end
 
 function Particle:filter(other)
-	if other.is_particle or other.is_entity or other.is_projectile then
+	if other.is_particle or other.is_entity or other.is_projectile or other.is_player then
 		return nil
 	end
 

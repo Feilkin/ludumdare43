@@ -155,13 +155,14 @@ function Map:setTiles(index, tileset, gid)
 			local id    = gid - tileset.firstgid
 			local quadX = (x - 1) * tileW + margin + (x - 1) * spacing
 			local quadY = (y - 1) * tileH + margin + (y - 1) * spacing
-			local properties, terrain, animation, objectGroup
+			local properties, terrain, animation, objectGroup, type_
 
 			for _, tile in pairs(tileset.tiles) do
 				if tile.id == id then
 					properties  = tile.properties
 					animation   = tile.animation
 					objectGroup = tile.objectGroup
+					type_        = tile.type
 
 					if tile.terrain then
 						terrain = {}
@@ -194,6 +195,7 @@ function Map:setTiles(index, tileset, gid)
 				sy          = 1,
 				r           = 0,
 				offset      = tileset.tileoffset,
+				type        = type_,
 			}
 
 			self.tiles[gid] = tile
@@ -818,14 +820,16 @@ function Map:drawObjectLayer(layer)
 	end
 
 	for _, object in ipairs(layer.objects) do
-		if object.shape == "rectangle" and not object.gid then
-			drawShape(object.rectangle, "rectangle")
-		elseif object.shape == "ellipse" then
-			drawShape(object.ellipse, "ellipse")
-		elseif object.shape == "polygon" then
-			drawShape(object.polygon, "polygon")
-		elseif object.shape == "polyline" then
-			drawShape(object.polyline, "polyline")
+		if object.visible then
+			if object.shape == "rectangle" and not object.gid then
+				drawShape(object.rectangle, "rectangle")
+			elseif object.shape == "ellipse" then
+				drawShape(object.ellipse, "ellipse")
+			elseif object.shape == "polygon" then
+				drawShape(object.polygon, "polygon")
+			elseif object.shape == "polyline" then
+				drawShape(object.polyline, "polyline")
+			end
 		end
 	end
 
@@ -907,6 +911,7 @@ function Map:setFlippedGID(gid)
 		sx         = tile.sx,
 		sy         = tile.sy,
 		r          = tile.r,
+		type       = tile.type,
 	}
 
 	if flipX then

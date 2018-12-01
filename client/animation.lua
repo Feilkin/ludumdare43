@@ -27,6 +27,9 @@ function Animation:update(dt)
 				self:pop()
 			end
 		end
+		if anim.per_frame then
+			anim.per_frame(self.current_frame)
+		end
 	end
 end
 
@@ -48,8 +51,7 @@ function Animation:push(name)
 end
 
 function Animation:pop()
-	print("Animation:pop " .. #self.stack)
-	print(table.remove(self.stack, #self.stack))
+	table.remove(self.stack, #self.stack)
 	self:switch(self.stack[#self.stack])
 end
 

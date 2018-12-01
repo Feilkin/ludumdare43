@@ -11,6 +11,7 @@ local Knife = require "projectiles.knife"
 local Player = class("Player", Entity)
 
 function Player:initialize()
+	self.is_player = true
 	self.team = "player"
 	Entity.initialize(self, vector(14, 32))
 	self.animation = Animation("res/animations/player.lua", "idle")
@@ -22,6 +23,12 @@ end
 function Player:update(dt)
 	if self.throw_cooldown > 0 then
 		self.throw_cooldown = self.throw_cooldown - dt
+	end
+
+	if (not self.body.on_ground) and
+		((self.body.speed.y > 100) or (self.body.speed.y < -100)) and
+		(self.animation.current_animation ~= "fall") then
+		self.animation:switch("fall")
 	end
 end
 
@@ -62,9 +69,14 @@ function Player:onCollide(col)
 		end
 
 		Signal.emit("play_sound", col.other.properties.slot, col.other.properties.voice)
+
 		if col.other.properties.repeats == "once" then
 			col.other.properties._triggered = true
 		end
+	end
+
+	if col.other.properties and col.other.properties.message then
+		self.message = col.other.properties.message
 	end
 end
 

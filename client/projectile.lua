@@ -10,6 +10,7 @@ function Projectile:initialize(size, sprite)
 	self.body = Body(size)
 	self.sprite = sprite
 	self.time_left = self.lifetime
+	self.damage = 0
 end
 
 function Projectile:getQuadName()
@@ -19,6 +20,9 @@ end
 function Projectile:onCollide(col)
 	self.body.immobile = true
 	Signal.emit("projectile_hit", self, col)
+	if col.other.take_damage then
+		col.other:take_damage(self.damage)
+	end
 end
 
 function Projectile:filter(other)

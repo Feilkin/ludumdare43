@@ -11,4 +11,11 @@
    <property name="ladder" type="bool" value="true"/>
   </properties>
  </tile>
+ <tile id="34" type="spike"/>
+ <tile id="49">
+  <animation>
+   <frame tileid="49" duration="100"/>
+   <frame tileid="50" duration="100"/>
+  </animation>
+ </tile>
 </tileset>
