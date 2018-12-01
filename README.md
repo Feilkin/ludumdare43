@@ -11,6 +11,8 @@ write stuff here
  * [Simple Tiled Implementation](https://github.com/karai17/Simple-Tiled-Implementation)
  * [Lua Finite State Machine](https://github.com/kyleconroy/lua-state-machine)
  * [lua-MessagePack](https://framagit.org/fperrad/lua-MessagePack)
+ * [Middleclass](https://github.com/kikito/middleclass)
+ * [tiny-ecs](https://github.com/bakpakin/tiny-ecs)
 
 ### Fonts:
 

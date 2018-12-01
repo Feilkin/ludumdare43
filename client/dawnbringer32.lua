@@ -37,9 +37,12 @@ local colors = {
 }
 
 if love then
-	if love.getVersion and (love.getVersion() > 0) then
-		for i, c in ipairs(colors) do
-			c = { c[1] / 255, c[2] / 255, c[3] / 255, c[4] / 255 }
+	if love.getVersion then
+		local major, minor = love.getVersion()
+		if major > 0 then
+			for i, c in ipairs(colors) do
+				colors[i] = { c[1] / 255, c[2] / 255, c[3] / 255, c[4] / 255 }
+			end
 		end
 	end
 end

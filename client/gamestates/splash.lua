@@ -5,7 +5,7 @@ function splash:init()
 end
 
 function splash:enter(previous, ...)
-	Timer.after(3, function()
+	Timer.after(0.5, function()
 		Gamestate.switch(GAMESTATES.menu)
 	end)
 end
@@ -23,7 +23,14 @@ function splash:update(dt)
 end
 
 function splash:draw()
-	love.graphics.draw(self.background_image, 0,0)
+	love.graphics.draw(self.background_image, 0, 0)
+	love.graphics.setFont(FONTS.header)
+	love.graphics.setColor(COLORS[8])
+	love.graphics.printf("<insert title here>", 0.5, 150, 400, "center")
+	love.graphics.setFont(FONTS.body)
+	love.graphics.setColor(COLORS[20])
+	love.graphics.print("a game by feilkin", 200, 170)
+	love.graphics.setColor(1, 1, 1, 1)
 end
 
 function splash:focus(focus) end

@@ -7,6 +7,8 @@
 -- some globals to speed things up
 Gamestate = require "hump.gamestate"
 Timer = require "hump.timer"
+Signal = require "hump.signal"
+
 COLORS = require "dawnbringer32"
 GAMESTATES = {
 	splash   = require "gamestates.splash",
