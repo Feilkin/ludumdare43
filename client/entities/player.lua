@@ -12,10 +12,11 @@ local Player = class("Player", Entity)
 
 function Player:initialize()
 	self.team = "player"
-	Entity.initialize(self, vector(15, 32))
+	Entity.initialize(self, vector(14, 32))
 	self.animation = Animation("res/animations/player.lua", "idle")
 	self.throw_cooldown = 0
 	self.sprite = "player_idle_1"
+	self.souls = 0
 end
 
 function Player:update(dt)
@@ -39,7 +40,7 @@ end
 function Player:throw_knife()
 	local knife = Knife()
 	local px, py = self.body:getPos()
-	knife.body:setPos(px + (self.flip_x and -1 or 16), py + 8)
+	knife.body:setPos(px + (self.flip_x and -1 or 16), py + 16)
 	knife.body.speed.x = 300 * (self.flip_x and -1 or 1) + love.math.random() * 10 - 5
 	knife.body.speed.y = -50
 	knife.flip_x = self.flip_x
@@ -47,8 +48,24 @@ function Player:throw_knife()
 	self.throw_cooldown = 1
 
 	Signal.emit("player_throw")
+	self.animation:push("throw")
 
 	return knife
+end
+
+function Player:onCollide(col)
+	Entity.onCollide(self, col)
+
+	if col.other.type == "voice_trigger" then
+		if col.other.properties.repeats == "once" and col.other.properties._triggered then
+			return
+		end
+
+		Signal.emit("play_sound", col.other.properties.slot, col.other.properties.voice)
+		if col.other.properties.repeats == "once" then
+			col.other.properties._triggered = true
+		end
+	end
 end
 
 return Player

@@ -17,12 +17,22 @@ function Particle:getQuadName()
 end
 
 function Particle:onCollide(col)
-
+	self.body.speed.y = 0
+	self.body.speed.x = 0
 end
 
 function Particle:filter(other)
 	if other.is_particle or other.is_entity or other.is_projectile then
 		return nil
+	end
+
+	if other.properties then
+		if other.properties.ladder then
+			return nil
+		end
+		if other.type == "voice_trigger" then
+			return nil
+		end
 	end
 
 	return "cross"

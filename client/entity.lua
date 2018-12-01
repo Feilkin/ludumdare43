@@ -24,6 +24,15 @@ function Entity:filter(other)
 		return nil
 	end
 
+	if other.properties then
+		if other.properties.ladder then
+			return "cross"
+		end
+		if other.type == "voice_trigger" then
+			return "cross"
+		end
+	end
+
 	return "slide"
 end
 

@@ -26,6 +26,15 @@ function Projectile:filter(other)
 		return nil
 	end
 
+	if other.properties then
+		if other.properties.ladder then
+			return nil
+		end
+		if other.type == "voice_trigger" then
+			return nil
+		end
+	end
+
 	return "slide"
 end
 

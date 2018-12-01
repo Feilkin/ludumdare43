@@ -15,7 +15,7 @@ function spriteRenderer:process(e, dt)
 	local quad = sheet:getQuad(e.sprite)
 	local x, y = e.body:getPos()
 	local w, h = e.body:getSize()
-	batch:add(quad, x + (e.flip_x and w or 0),
+	batch:add(quad, x + (e.flip_x and w - 1 or 0) + 1,
 		y, 0, e.flip_x and -1 or 1, 1)
 end
 

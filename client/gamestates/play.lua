@@ -25,12 +25,13 @@ local dust_sprites = { "dust_1", "dust_2", "dust_3" }
 
 Signal.register("projectile_hit", function(p, col)
 	local b = p.body
-	for i = 1, love.math.random(50, 100) do
+	for i = 1, love.math.random(50, 75) do
 		local sprite = blood_sprites[love.math.random(1, #blood_sprites)]
 		local pp = Particle(vector(1,1), sprite)
 		pp.body:setPos(b.position.x + (p.flip_x and 0 or b.size.x), b.position.y)
 		pp.body.speed.y = love.math.random(-50, 50)
 		pp.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
+		pp.time_left = love.math.random() * 5 + 2
 		play.world:add(pp)
 	end
 end)
@@ -51,6 +52,34 @@ Signal.register("entity_jump", function(entity)
 	end
 end)
 
+Signal.register("play_sound", function(slot, sound_name)
+	local sound = play.sounds[slot][sound_name]
+	sound.source:play()
+	if sound.message then print(sound.message) end
+end)
+
+Signal.register("player_throw", function()
+	local sound = play.sounds["effects"]["throw"]
+	sound.source:play()
+end)
+
+Signal.register("projectile_hit", function(p, col)
+	local sound 
+	if col.other.is_entity then
+		sound = play.sounds["effects"]["hit"]
+	else
+		sound = play.sounds["effects"]["hit_ground"]
+	end
+	sound.source:play()
+end)
+
+Signal.register("entity_land", function(e, col, speed_y)
+	if speed_y > 300 then
+		local sound = play.sounds["effects"]["entity_land"]
+		sound.source:play()
+	end
+end)
+
 function play:loadSpritesheet(name)
 	local data = love.filesystem.load("res/sprites/" .. name ..".lua")
 	local sheet = Spritesheet("res/sprites/" .. name ..".png", data())
@@ -60,12 +89,29 @@ function play:loadSpritesheet(name)
 	self.spritebatches[name] = batch
 end
 
+function play:loadSounds()
+	self.sounds = {}
+	self.sounds.boss = self:loadSound("res/sounds/boss/singoblisa")
+	self.sounds.effects = self:loadSound("res/sounds/effects/effects")
+end
+
+function play:loadSound(filename)
+	local data = require(filename)
+	for _, s in pairs(data) do
+		s.source = love.audio.newSource(s.file, "static")
+	end
+
+	return data
+end
+
 function play:init()
 	self.spritesheets = {}
 	self.spritebatches = {}
 	self:loadSpritesheet("entities")
 	self:loadSpritesheet("projectiles")
 	self:loadSpritesheet("particles")
+
+	self:loadSounds()
 end
 
 function play:enter(previous, ...)
@@ -100,7 +146,7 @@ function play:loadMap(filename)
 end
 
 function play:initWorld()
-	local bump_world = bump.newWorld(64)
+	local bump_world = bump.newWorld(32)
 	local world = tiny.world()
 
 	world.bump_world = bump_world
@@ -159,13 +205,13 @@ function play:handle_input(dt)
 	local player = self.player
 	if love.keyboard.isDown("right") then
 		player.body.speed.x = 75
-		if player.animation.current_animation ~= "walk" then
+		if player.animation.current_animation == "idle" then
 			player.animation:switch("walk")
 		end
 		player.flip_x = false
 	elseif love.keyboard.isDown("left") then
 		player.body.speed.x = -75
-		if player.animation.current_animation ~= "walk" then
+		if player.animation.current_animation == "idle" then
 			player.animation:switch("walk")
 		end
 		player.flip_x = true
@@ -174,6 +220,12 @@ function play:handle_input(dt)
 		if player.animation.current_animation == "walk" then
 			player.animation:switch("idle")
 		end
+	end
+
+	if love.keyboard.isDown("down") and player.body.on_ladder then
+		player.body.speed.y = 75
+	elseif love.keyboard.isDown("up") and player.body.on_ladder then
+		player.body.speed.y = -75
 	end
 
 	if love.keyboard.isDown("x") and player:can_throw() then
@@ -194,11 +246,14 @@ function play:draw()
 	self.map:draw(-cx + gw/4, -cy + gh/4, 2, 2)
 
 	love.graphics.push()
-	love.graphics.reset() -- hack to get zoom to work because im lazy
+	love.graphics.origin()
 	self.camera:attach()
-	self:draw_entities()
+		self:draw_entities()
 	self.camera:detach()
 	love.graphics.pop()
+
+	love.graphics.print("Souls: " .. self.player.souls, 2, 2)
+	love.graphics.print("FPS: " .. love.timer.getFPS(), 2, 12)
 end
 
 function play:draw_entities()
