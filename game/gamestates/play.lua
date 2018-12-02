@@ -26,120 +26,130 @@ local platformSystem = require "systems.platforms"
 
 local monsters = {}
 monsters["Goblin"] = Goblin
+monsters["Singoblisa"] = require "entities.singoblisa"
 
 local blood_sprites = { "blood_1", "blood_2", "blood_3" }
 local dust_sprites = { "dust_1", "dust_2", "dust_3" }
 
-Signal.register("spawn_blood", function(e, col, amount)
-	local b = e.body
-	local sp = vector(1,1)
-	for i = 1, amount do
-		local sprite = blood_sprites[love.math.random(1, #blood_sprites)]
-		local p = Particle(sp, sprite)
-		p.body:setPos(b.position.x + (e.flip_x and 0 or b.size.x), b.position.y)
-		p.body.speed.y = love.math.random(-50, 50)
-		p.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
-		p.time_left = love.math.random() * 1 + 1
-		play.world:add(p)
-	end
-end)
+function play:registerSignals()
+	local play = self
 
-Signal.register("projectile_hit", function(p, col)
-	if col.other.is_entity then
-		Timer.during(1, function()
-			Signal.emit("spawn_blood", p, col, love.math.random(1, 5))
-		end)
-	else
-		local b = p.body
+	Signal.register("spawn_blood", function(e, col, amount)
+		local b = e.body
 		local sp = vector(1,1)
-		for i = 1, love.math.random(10, 20) do
+		for i = 1, amount * (SETTINGS.particles / 10) do
+			local sprite = blood_sprites[love.math.random(1, #blood_sprites)]
+			local p = Particle(sp, sprite)
+			p.body:setPos(b.position.x + (e.flip_x and 0 or b.size.x), b.position.y)
+			p.body.speed.y = love.math.random(-50, 50)
+			p.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
+			p.time_left = love.math.random() * 1 + 1
+			play.world:add(p)
+		end
+	end)
+
+	Signal.register("projectile_hit", function(p, col)
+		if col.other.is_entity then
+			Timer.during(1, function()
+				Signal.emit("spawn_blood", p, col, love.math.random(1, 5))
+			end)
+		else
+			local b = p.body
+			local sp = vector(1,1)
+			for i = 1, love.math.random(20, 40) * (SETTINGS.particles / 10) do
+				local sprite = dust_sprites[love.math.random(1, #dust_sprites)]
+				local pp = Particle(sp, sprite)
+				pp.body:setPos(b.position.x + (p.flip_x and 0 or b.size.x), b.position.y)
+				pp.body.speed.y = love.math.random(-50, 50)
+				pp.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
+				pp.time_left = love.math.random() * 1 + 0.5
+				play.world:add(pp)
+			end
+		end
+	end)
+
+	Signal.register("entity_jump", function(entity)
+		-- TODO: get right dust particle
+		local b = entity.body
+		local x, y = b:getPos()
+		local w, h = b:getSize()
+		for i = 1, love.math.random(15, 30) * (SETTINGS.particles / 10) do
 			local sprite = dust_sprites[love.math.random(1, #dust_sprites)]
-			local pp = Particle(sp, sprite)
-			pp.body:setPos(b.position.x + (p.flip_x and 0 or b.size.x), b.position.y)
-			pp.body.speed.y = love.math.random(-50, 50)
-			pp.body.speed.x = (love.math.random() * 50 - 10) * col.normal.x
-			pp.time_left = love.math.random() * 1 + 0.5
+			local pp = Particle(vector(1,1), sprite)
+			pp.time_left = 0.2
+			pp.body:setPos(x + w / 2, y + h - 1)
+			pp.body.speed.y = love.math.random(-20, -50)
+			pp.body.speed.x = love.math.random(-100, 100)
 			play.world:add(pp)
 		end
-	end
-end)
+	end)
 
-Signal.register("entity_jump", function(entity)
-	-- TODO: get right dust particle
-	local b = entity.body
-	local x, y = b:getPos()
-	local w, h = b:getSize()
-	for i = 1, love.math.random(15, 30) do
-		local sprite = dust_sprites[love.math.random(1, #dust_sprites)]
-		local pp = Particle(vector(1,1), sprite)
-		pp.time_left = 0.2
-		pp.body:setPos(x + w / 2, y + h - 1)
-		pp.body.speed.y = love.math.random(-20, -50)
-		pp.body.speed.x = love.math.random(-100, 100)
-		play.world:add(pp)
-	end
-end)
-
-Signal.register("play_sound", function(slot, sound_name)
-	local sound = play.sounds[slot][sound_name]
-	sound.source:play()
-	if sound.message then
-		play.player.message = sound.message
-
-		if sound.message_duration then
-			Timer.during(sound.message_duration, function()
-				play.player.message = sound.message
-			end)
-		end
-	end
-end)
-
-Signal.register("player_throw", function()
-	play.sounds["effects"]["throw"].source:play()
-end)
-
-Signal.register("entity_jump", function(entity)
-	if entity == play.player then
-		play.sounds["effects"]["player_jump"].source:play()
-	end
-end)
-
-Signal.register("projectile_hit", function(p, col)
-	local sound
-	if col.other.is_entity then
-		sound = play.sounds["effects"]["hit"]
-	else
-		sound = play.sounds["effects"]["hit_ground"]
-	end
-	sound.source:play()
-end)
-
-Signal.register("entity_land", function(e, col, speed_y)
-	if speed_y > 300 then
-		local sound = play.sounds["effects"]["entity_land"]
+	Signal.register("play_sound", function(slot, sound_name)
+		local sound = play.sounds[slot][sound_name]
 		sound.source:play()
-	end
-end)
+		if sound.message then
+			play.player.message = sound.message
 
-Signal.register("enemy_died", function(e)
-	-- spawn souls
-	local x, y = e.body:getPos()
-	local w, h = e.body:getSize()
-	for i = 1, e.souls do
-		local s = Soul()
-		s.time_left = 25
-		s.body:setPos(x + w / 2, y + 2)
-		Timer.after(0.3, function()
-			s.homing_target = play.player
-			play.world:addEntity(s)
-		end)
-		play.world:add(s)
-	end
-end)
+			if sound.message_duration then
+				Timer.during(sound.message_duration, function()
+					play.player.message = sound.message
+				end)
+			end
+		end
+	end)
 
-Signal.register("player_respawn", function(e)
-	play:loadLevel()
-end)
+	Signal.register("player_throw", function()
+		play.sounds["effects"]["throw"].source:play()
+	end)
+
+	Signal.register("switch_level", function(switch_to)
+		play:loadLevel(switch_to)
+	end)
+
+	Signal.register("entity_jump", function(entity)
+		if entity == play.player then
+			play.sounds["effects"]["player_jump"].source:play()
+		end
+	end)
+
+	Signal.register("projectile_hit", function(p, col)
+		local sound
+		if col.other.is_entity then
+			sound = play.sounds["effects"]["hit"]
+		else
+			sound = play.sounds["effects"]["hit_ground"]
+		end
+		sound.source:play()
+	end)
+
+	Signal.register("entity_land", function(e, col, speed_y)
+		if speed_y > 300 then
+			local sound = play.sounds["effects"]["entity_land"]
+			sound.source:play()
+		end
+	end)
+
+	Signal.register("enemy_died", function(e)
+		-- spawn souls
+		local x, y = e.body:getPos()
+		local w, h = e.body:getSize()
+		local reward = e.souls
+		Timer.every(0.05, function()
+			local s = Soul()
+			s.time_left = 25
+			s.body:setPos(x + w / 2, y + 2)
+			Timer.after(0.3, function()
+				s.homing_target = play.player
+				play.world:addEntity(s)
+			end)
+			play.world:add(s)
+		end, reward)
+	end)
+
+	Signal.register("player_respawn", function(e)
+		play:loadLevel(self.current_level)
+	end)
+end
 
 function play:loadSpritesheet(name)
 	local data = love.filesystem.load("res/sprites/" .. name ..".lua")
@@ -174,6 +184,8 @@ function play:init()
 	self:loadSpritesheet("objects")
 
 	self:loadSounds()
+
+	self:registerSignals()
 end
 
 function play:enter(previous, ...)
@@ -183,7 +195,7 @@ function play:enter(previous, ...)
 
 	love.mouse.setVisible(false)
 
-	self:loadLevel()
+	self:loadLevel("level_1")
 end
 
 function play:loadMap(filename)
@@ -230,11 +242,9 @@ function play:initWorld()
 		tiny.clearEntities(self.world)
 		tiny.clearSystems(self.world)
 		tiny.refresh(self.world)
-		world = self.world
-	else
-		world = tiny.world()
 	end
 
+	world = tiny.world()
 	local bump_world = bump.newWorld(16)
 	world.bump_world = bump_world
 
@@ -250,21 +260,21 @@ function play:initWorld()
 	self.world = world
 end
 
-function play:loadLevel()
+function play:loadLevel(name)
+	self.current_level = name
 	self:initWorld()
-
-	self:loadMap("res/maps/level_1.lua")
+	self:loadMap("res/maps/" .. name .. ".lua")
 
 	-- find spawn and place player at it
 	local spawn
 	if self.player.checkpoint then
 		spawn = self.player.checkpoint
 	else
-		spawn = self.map:findObject("objects", "spawn_1_1")
+		spawn = self.map:findObject("objects", "spawn_1")
 		self.player.checkpoint = spawn
 	end
 
-	self.player:spawn(vector(spawn.x, spawn.y))
+	self.player:spawn(vector(spawn.x, spawn.y - self.player.body.size.y))
 
 	-- add platforms
 	local platforms = self.map:findAll("objects", "platform")
@@ -283,7 +293,7 @@ function play:loadLevel()
 	-- spawn enemies
 	local spawners = self.map:findAll("objects", "monster_spawn")
 	for _, spawner in ipairs(spawners) do
-		local monster = monsters[spawner.properties.monster_type]()
+		local monster = monsters[spawner.properties.monster_type](self.world)
 		local w, h = monster.body:getSize()
 		monster:spawn(vector(spawner.x, spawner.y - h))
 		monster.patrol_min_x = spawner.properties.patrol_min_x
@@ -412,7 +422,7 @@ function play:keypressed(key, code, isrepeat)
 	elseif key == "p" then
 		Gamestate.push(GAMESTATES.pause)
 	elseif key == "r" then
-		self:loadLevel()
+		self:loadLevel(self.current_level)
 	end
 end
 

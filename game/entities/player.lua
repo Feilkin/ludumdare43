@@ -13,7 +13,7 @@ local Player = class("Player", Entity)
 function Player:initialize()
 	self.is_player = true
 	self.team = "player"
-	Entity.initialize(self, vector(14, 32))
+	Entity.initialize(self, vector(14, 31))
 	self.animation = Animation("res/animations/player.lua", "idle")
 	self.throw_cooldown = 0
 	self.sprite = "player_idle_1"
@@ -87,6 +87,13 @@ function Player:onCollide(col)
 		col.other.animation:switch("lit")
 	end
 
+	if col.other.type == "exit" then
+		self.checkpoint = nil
+		Timer.after(1, function()
+			Signal.emit("switch_level", col.other.properties.exit_to)
+		end)
+	end
+
 	--if col.other.type == "platform" then
 	--	self.body.speed.x = col.other.speed_x
 	--end
@@ -96,6 +103,11 @@ function Player:onCollide(col)
 	end
 
 	table.insert(self.on_objects, col.other)
+end
+
+function Player:take_damage(...)
+	Entity.take_damage(self, ...)
+	Signal.emit("play_sound", "effects", "player_hit")
 end
 
 function Player:onDeath()

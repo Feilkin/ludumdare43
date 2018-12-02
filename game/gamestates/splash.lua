@@ -5,7 +5,7 @@ function splash:init()
 end
 
 function splash:enter(previous, ...)
-	Timer.after(0.5, function()
+	Timer.after(2, function()
 		Gamestate.switch(GAMESTATES.menu)
 	end)
 end
@@ -26,7 +26,7 @@ function splash:draw()
 	love.graphics.draw(self.background_image, 0, 0)
 	love.graphics.setFont(FONTS.header)
 	love.graphics.setColor(COLORS[8])
-	love.graphics.printf("<insert title here>", 0.5, 150, 400, "center")
+	love.graphics.printf("Seppo VS Goblins", 0.5, 150, 400, "center")
 	love.graphics.setFont(FONTS.body)
 	love.graphics.setColor(COLORS[20])
 	love.graphics.print("a game by feilkin", 200, 170)

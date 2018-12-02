@@ -16,7 +16,7 @@ function Knife:onCollide(col, world)
 	Projectile.onCollide(self, col, world)
 
 	-- attach to enemy
-	if col.other.body then
+	if not col.other.is_projectile and col.other.body then
 		self.attach_to = col.other
 		local x, y = col.other.body:getPos()
 		self.attach_offset = vector(col.touch.x - x, col.touch.y - y)

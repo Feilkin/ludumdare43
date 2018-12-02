@@ -53,6 +53,10 @@ function Projectile:filter(other)
 		return "cross"
 	end
 
+	if other.type == "exit" then
+		return "cross"
+	end
+
 	return "touch"
 end
 

@@ -44,6 +44,10 @@ function Particle:filter(other)
 	if other.type == "checkpoint" then
 		return "cross"
 	end
+	
+	if other.type == "exit" then
+		return "cross"
+	end
 
 	return "bounce"
 end

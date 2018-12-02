@@ -2,16 +2,16 @@ local menu = {}
 
 function menu:init()
 	self.buttons = {
-		{ "Play", function()
-			Gamestate.switch(GAMESTATES.play)
+		{ "Return to menu", function()
+			Gamestate.switch(GAMESTATES.menu)
 		end },
-		{ "Settings", function()
-			Gamestate.push(GAMESTATES.settings)
-		end},
 		{ "Quit", function()
 			love.event.quit()
 		end },
 	}
+
+	self.flash_timer = 0
+	self.flash_color = 1
 end
 
 function menu:enter(previous, ...)
@@ -27,12 +27,21 @@ function menu:resume()
 end
 
 function menu:update(dt)
-
+	self.flash_timer = self.flash_timer + dt
+	if self.flash_timer >= 0.1 then
+		self.flash_timer = 0
+		self.flash_color = self.flash_color + 1
+		if self.flash_color > #COLORS then
+			self.flash_color = 1
+		end
+	end
 end
 
 function menu:draw()
 	love.graphics.clear(COLORS[2])
+	love.graphics.setColor(COLORS[self.flash_color])
 	love.graphics.print("Don't forget to rate :)", 4, 4)
+	love.graphics.setColor(1, 1, 1, 1)
 
 	for i, item in ipairs(self.buttons) do
 		if i == self.selected_index then
@@ -43,9 +52,11 @@ function menu:draw()
 		love.graphics.setColor(1, 1, 1, 1)
 	end
 
-	love.graphics.setColor(COLORS[16])
-	love.graphics.printf("arrow keys to select, [c] or [enter] to activate", 0, 288, 400, "center")
+	love.graphics.setColor(COLORS[9])
+	love.graphics.setFont(FONTS.header)
+	love.graphics.printf("You WON!", 0, 130, 400, "center")
 
+	love.graphics.setFont(FONTS.body)
 	love.graphics.setColor(1, 1, 1, 1)
 end
 

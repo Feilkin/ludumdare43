@@ -16,6 +16,12 @@ GAMESTATES = {
 	settings = require "gamestates.settings",
 	play     = require "gamestates.play",
 	pause    = require "gamestates.pause",
+	victory  = require "gamestates.victory",
+}
+
+SETTINGS = {
+	volume = 10,
+	particles = 10,
 }
 
 function load_fonts()
@@ -35,7 +41,9 @@ function love.load()
 end
 
 function love.update(dt)
-	Timer.update(dt)
+	if Gamestate.current() ~= GAMESTATES.pause then
+		Timer.update(dt)
+	end
 end
 
 function love.draw()

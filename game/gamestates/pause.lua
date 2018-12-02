@@ -23,11 +23,11 @@ end
 function pause:draw()
 	local w, h = love.graphics.getDimensions()
 	self.from:draw()
-	love.graphics.setColor(0, 0, 0, 0.5)
+	love.graphics.setColor(0, 0, 0, 0.7)
 	love.graphics.rectangle("fill", 0, 0, w, h)
 	love.graphics.setColor(1, 1, 1, 1)
 	love.graphics.printf("PAUSED", 0, h / 4 - 16, w / 2, "center")
-	love.graphics.printf("[p] to continue, [esc] to quit", 0, h / 4 + 16, w / 2, "center")
+	love.graphics.printf("[p] to continue, [esc] to return to main menu, [s] for settings", 0, h / 4 + 16, w / 2, "center")
 	love.graphics.printf("Hint: you can press [r] to restart the level", 0, h / 4 + 35, w / 2, "center")
 end
 
@@ -36,8 +36,10 @@ function pause:focus(focus) end
 function pause:keypressed(key, code, isrepeat)
 	if key == "p" then
 		Gamestate.pop()
+	elseif key == "s" then
+		Gamestate.push(GAMESTATES.settings)
 	elseif key == "escape" then
-		love.event.quit()
+		Gamestate.switch(GAMESTATES.menu)
 	end
 end
 

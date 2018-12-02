@@ -11,7 +11,7 @@ local Animation = require "animation"
 local Goblin = class("Goblin", Entity)
 
 function Goblin:initialize()
-	Entity.initialize(self, vector(15, 26))
+	Entity.initialize(self, vector(15, 24))
 	self.team = "goblin"
 	self.animation = Animation("res/animations/goblin.lua", "idle")
 	self.sprite = self.animation:getFrame()
