@@ -19,7 +19,7 @@ function platformSystem:process(e, dt)
 
 	-- hack to move players
 	local cols, len = self.world.bump_world:querySegment(e.x, e.y - 1, e.x + e.width, e.y - 1, function(item)
-		return item.is_entity
+		return item.is_entity and not (item.type == "platform")
 	end)
 
 	for _, col in ipairs(cols) do

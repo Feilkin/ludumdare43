@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"register",
+				"registerSignals"
+			],
+			[
 				"object",
 				"object_sheet"
 			],
@@ -510,116 +514,139 @@
 			[
 				"collisi",
 				"collision_debug_system"
-			],
-			[
-				"collision_",
-				"collision_debug_system"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "client/particle.lua",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 923,
+				"buffer_size": 687,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/res/sounds/effects/effects.lua",
+			"file": "game/gamestates/splash.lua",
 			"settings":
 			{
-				"buffer_size": 484,
+				"buffer_size": 1109,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/entity.lua",
+			"file": "game/gamestates/menu.lua",
 			"settings":
 			{
-				"buffer_size": 1386,
+				"buffer_size": 2472,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/sti/init.lua",
+			"file": "game/entities/player.lua",
 			"settings":
 			{
-				"buffer_size": 38541,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/sti/plugins/bump.lua",
-			"settings":
-			{
-				"buffer_size": 5924,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/sti/plugins/navpath.lua",
-			"settings":
-			{
-				"buffer_size": 1563,
+				"buffer_size": 2725,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/projectile.lua",
+			"file": "game/res/sounds/effects/effects.lua",
 			"settings":
 			{
-				"buffer_size": 1122,
+				"buffer_size": 616,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/lifetimes.lua",
+			"file": "game/res/animations/bonfire.lua",
 			"settings":
 			{
-				"buffer_size": 288,
+				"buffer_size": 132,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/projectiles/knife.lua",
+			"file": "game/entities/singoblisa.lua",
 			"settings":
 			{
-				"buffer_size": 686,
+				"buffer_size": 3341,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/attachs.lua",
+			"file": "game/systems/platforms.lua",
 			"settings":
 			{
-				"buffer_size": 703,
+				"buffer_size": 1000,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/deaths.lua",
+			"file": "game/gamestates/victory.lua",
 			"settings":
 			{
-				"buffer_size": 251,
+				"buffer_size": 2781,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/entities/goblin.lua",
+			"file": "game/gamestates/pause.lua",
+			"settings":
+			{
+				"buffer_size": 1267,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/systems/spriterenderer.lua",
+			"settings":
+			{
+				"buffer_size": 603,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/main.lua",
+			"settings":
+			{
+				"buffer_size": 1131,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/gamestates/settings.lua",
+			"settings":
+			{
+				"buffer_size": 3155,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/res/sprites/entities.lua",
+			"settings":
+			{
+				"buffer_size": 646,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/entities/goblin.lua",
 			"settings":
 			{
 				"buffer_size": 1802,
@@ -628,88 +655,52 @@
 			}
 		},
 		{
-			"file": "client/res/animations/goblin.lua",
+			"file": "game/res/animations/singoblisa.lua",
 			"settings":
 			{
-				"buffer_size": 276,
+				"buffer_size": 232,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/ais.lua",
+			"file": "game/res/sounds/boss/singoblisa.lua",
 			"settings":
 			{
-				"buffer_size": 1503,
+				"buffer_size": 711,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/entities/player.lua",
+			"file": "game/gamestates/play.lua",
 			"settings":
 			{
-				"buffer_size": 2444,
+				"buffer_size": 11875,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/res/animations/player.lua",
+			"file": "game/res/sprites/projectiles.lua",
 			"settings":
 			{
-				"buffer_size": 529,
+				"buffer_size": 127,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/res/sounds/boss/singoblisa.lua",
+			"file": "game/res/animations/fireball.lua",
 			"settings":
 			{
-				"buffer_size": 187,
+				"buffer_size": 80,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/animation.lua",
-			"settings":
-			{
-				"buffer_size": 1414,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/spritesheet.lua",
-			"settings":
-			{
-				"buffer_size": 684,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/body.lua",
-			"settings":
-			{
-				"buffer_size": 604,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/gamestates/splash.lua",
-			"settings":
-			{
-				"buffer_size": 1114,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/gamestates/pause.lua",
+			"file": "game/projectiles/fireball.lua",
 			"settings":
 			{
 				"buffer_size": 1156,
@@ -718,147 +709,48 @@
 			}
 		},
 		{
-			"file": "client/res/sprites/objects.lua",
+			"file": "game/projectiles/knife.lua",
 			"settings":
 			{
-				"buffer_size": 351,
+				"buffer_size": 718,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/platforms.lua",
+			"file": "game/entity.lua",
 			"settings":
 			{
-				"buffer_size": 966,
+				"buffer_size": 1440,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/animations.lua",
+			"file": "game/projectile.lua",
 			"settings":
 			{
-				"buffer_size": 360,
+				"buffer_size": 1175,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "README.md",
+			"file": "game/particle.lua",
 			"settings":
 			{
-				"buffer_size": 751,
+				"buffer_size": 977,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "client/systems/physics.lua",
+			"file": "ludumdare43.sublime-project",
 			"settings":
 			{
-				"buffer_size": 1680,
+				"buffer_size": 218,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/gamestates/play.lua",
-			"settings":
-			{
-				"buffer_size": 11338,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/res/animations/bonfire.lua",
-			"settings":
-			{
-				"buffer_size": 131,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/res/sprites/entities.lua",
-			"settings":
-			{
-				"buffer_size": 509,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/systems/homings.lua",
-			"settings":
-			{
-				"buffer_size": 748,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/particles/soul.lua",
-			"settings":
-			{
-				"buffer_size": 831,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/res/animations/soul.lua",
-			"settings":
-			{
-				"buffer_size": 59,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/res/sprites/particles.lua",
-			"settings":
-			{
-				"buffer_size": 221,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/systems/spriterenderer.lua",
-			"settings":
-			{
-				"buffer_size": 599,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/gamestates/menu.lua",
-			"settings":
-			{
-				"buffer_size": 2436,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/gamestates/settings.lua",
-			"settings":
-			{
-				"buffer_size": 655,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/conf.lua",
-			"settings":
-			{
-				"buffer_size": 4046,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -980,36 +872,62 @@
 	"expanded_folders":
 	[
 		"/E/work/git/ludumdare43",
-		"/E/work/git/ludumdare43/client",
-		"/E/work/git/ludumdare43/client/entities",
-		"/E/work/git/ludumdare43/client/gamestates",
-		"/E/work/git/ludumdare43/client/particles",
-		"/E/work/git/ludumdare43/client/projectiles",
-		"/E/work/git/ludumdare43/client/res",
-		"/E/work/git/ludumdare43/client/res/animations",
-		"/E/work/git/ludumdare43/client/res/fonts",
-		"/E/work/git/ludumdare43/client/res/maps",
-		"/E/work/git/ludumdare43/client/res/sounds",
-		"/E/work/git/ludumdare43/client/res/sounds/boss",
-		"/E/work/git/ludumdare43/client/res/sounds/effects",
-		"/E/work/git/ludumdare43/client/res/sprites",
-		"/E/work/git/ludumdare43/client/res/tiles",
-		"/E/work/git/ludumdare43/client/sti",
-		"/E/work/git/ludumdare43/client/sti/plugins",
-		"/E/work/git/ludumdare43/client/systems"
+		"/E/work/git/ludumdare43/game",
+		"/E/work/git/ludumdare43/game/entities",
+		"/E/work/git/ludumdare43/game/gamestates",
+		"/E/work/git/ludumdare43/game/particles",
+		"/E/work/git/ludumdare43/game/projectiles",
+		"/E/work/git/ludumdare43/game/res",
+		"/E/work/git/ludumdare43/game/res/animations",
+		"/E/work/git/ludumdare43/game/res/sounds",
+		"/E/work/git/ludumdare43/game/res/sounds/boss",
+		"/E/work/git/ludumdare43/game/res/sounds/effects",
+		"/E/work/git/ludumdare43/game/res/sprites",
+		"/E/work/git/ludumdare43/game/systems"
 	],
 	"file_history":
 	[
-		"/E/work/git/ludumdare43/client/main.lua",
-		"/E/work/git/ludumdare43/client/res/animations/player.lua",
-		"/E/work/git/ludumdare43/client/res/sprites/entities.lua",
-		"/E/work/git/ludumdare43/client/systems/animations.lua",
-		"/E/work/git/ludumdare43/client/animation.lua",
+		"/E/work/git/ludumdare43/game/tiny.lua",
+		"/E/work/git/ludumdare43/client/conf.lua",
+		"/E/work/git/ludumdare43/client/gamestates/settings.lua",
+		"/E/work/git/ludumdare43/client/gamestates/menu.lua",
+		"/E/work/git/ludumdare43/client/systems/spriterenderer.lua",
 		"/E/work/git/ludumdare43/client/res/sprites/particles.lua",
-		"/E/work/git/ludumdare43/client/res/sprites/projectiles.lua",
-		"/E/work/git/ludumdare43/client/res/animations/goblin.lua",
-		"/E/work/git/ludumdare43/client/res/maps/level_1.lua",
+		"/E/work/git/ludumdare43/client/res/animations/soul.lua",
+		"/E/work/git/ludumdare43/client/particles/soul.lua",
+		"/E/work/git/ludumdare43/client/systems/homings.lua",
+		"/E/work/git/ludumdare43/client/res/sprites/entities.lua",
 		"/E/work/git/ludumdare43/client/gamestates/play.lua",
+		"/E/work/git/ludumdare43/client/systems/physics.lua",
+		"/E/work/git/ludumdare43/client/systems/animations.lua",
+		"/E/work/git/ludumdare43/client/systems/platforms.lua",
+		"/E/work/git/ludumdare43/client/res/sprites/objects.lua",
+		"/E/work/git/ludumdare43/client/gamestates/pause.lua",
+		"/E/work/git/ludumdare43/client/gamestates/splash.lua",
+		"/E/work/git/ludumdare43/client/body.lua",
+		"/E/work/git/ludumdare43/client/spritesheet.lua",
+		"/E/work/git/ludumdare43/client/animation.lua",
+		"/E/work/git/ludumdare43/client/res/sounds/boss/singoblisa.lua",
+		"/E/work/git/ludumdare43/client/res/animations/player.lua",
+		"/E/work/git/ludumdare43/client/entities/player.lua",
+		"/E/work/git/ludumdare43/client/systems/ais.lua",
+		"/E/work/git/ludumdare43/client/res/animations/goblin.lua",
+		"/E/work/git/ludumdare43/client/entities/goblin.lua",
+		"/E/work/git/ludumdare43/client/systems/deaths.lua",
+		"/E/work/git/ludumdare43/client/systems/attachs.lua",
+		"/E/work/git/ludumdare43/client/projectiles/knife.lua",
+		"/E/work/git/ludumdare43/client/systems/lifetimes.lua",
+		"/E/work/git/ludumdare43/client/sti/plugins/navpath.lua",
+		"/E/work/git/ludumdare43/client/projectile.lua",
+		"/E/work/git/ludumdare43/client/sti/init.lua",
+		"/E/work/git/ludumdare43/client/sti/plugins/bump.lua",
+		"/E/work/git/ludumdare43/client/particle.lua",
+		"/E/work/git/ludumdare43/client/entity.lua",
+		"/E/work/git/ludumdare43/client/res/sounds/effects/effects.lua",
+		"/E/work/git/ludumdare43/client/res/animations/bonfire.lua",
+		"/E/work/git/ludumdare43/client/main.lua",
+		"/E/work/git/ludumdare43/client/res/sprites/projectiles.lua",
+		"/E/work/git/ludumdare43/client/res/maps/level_1.lua",
 		"/E/work/git/ludumdare43/server/Cargo.toml",
 		"/E/work/git/ludumdare43/server/src/main.rs",
 		"/E/work/git/ludumdare43/client/dawnbringer32.lua",
@@ -1096,38 +1014,7 @@
 		"/home/feikki/tyot/lehto/base/templates/document/index.html",
 		"/home/feikki/tyot/lehto/base/templates/apartment/parking_space_index.htm",
 		"/home/feikki/tyot/lehto/base/urls.py",
-		"/home/feikki/tyot/lehto/document/views.py",
-		"/home/feikki/tyot/lehto/README.md",
-		"/home/feikki/tyot/lehto/base/static/css/custom.css",
-		"/home/feikki/liukuma",
-		"/home/feikki/tyot/lehto/base/templates/project/edit.html",
-		"/home/feikki/tyot/lehto/base/templates/user/edit_self.html",
-		"/home/feikki/tyot/lehto/rest_api/models.py",
-		"/home/feikki/tyot/lehto/base/templates/apartment/edit.html",
-		"/home/feikki/tyot/lehto/base/templates/apartment/new.html",
-		"/home/feikki/tyot/lehto/base/forms.py",
-		"/home/feikki/tyot/lehto/base/templates/user/edit.html",
-		"/home/feikki/tyot/lehto/document/models.py",
-		"/home/feikki/tyot/lehto/base/templates/emails/file_added_notification.tpl",
-		"/home/feikki/tyot/lehto/base/templates/export/pdf_pricelist.html",
-		"/home/feikki/tyot/lehto/document/forms.py",
-		"/home/feikki/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/feikki/tyot/lehto/document/apps.py",
-		"/home/feikki/tyot/lehto/base/templates/project/new.html",
-		"/home/feikki/tyot/lehto/task_management/templatetags/poll_extras.py",
-		"/home/feikki/tyot/lehto/document/urls.py",
-		"/home/feikki/tyot/lehto/base/templates/apartment/index.html",
-		"/home/feikki/tyot/lehto/base/templates/base/login.html",
-		"/home/feikki/tyot/lehto/base/templates/_layouts/boostrap_input.html",
-		"/home/feikki/.ssh/id_rsa.pub",
-		"/home/feikki/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
-		"/home/feikki/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
-		"/home/feikki/tyot/lehto/lehto.sublime-project",
-		"/home/feikki/love/towerdefence/main.moon",
-		"/home/feikki/love/hexagonmap/main.lua",
-		"/home/feikki/love/hexagonmap/main.moon",
-		"/home/feikki/PlayOnLinux's virtual drives/Steam/drive_c/Program Files/Steam/steam_with_proxy.bat",
-		"/home/feikki/love/hexagonmap/hexagonmap.sublime-project"
+		"/home/feikki/tyot/lehto/document/views.py"
 	],
 	"find":
 	{
@@ -1146,6 +1033,19 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"player",
+			"blood",
+			"menu",
+			"38",
+			"26",
+			"goblin",
+			"knife",
+			"Knife",
+			"boss_hit",
+			"refresh",
+			"loadLevel",
+			"loadLEvel",
+			"Goblin",
 			"1024",
 			"platform",
 			"attach",
@@ -1260,20 +1160,7 @@
 			"apartement",
 			"POST",
 			"apartment",
-			"kauppakirja",
-			"sale",
-			"saledoc",
-			"objects",
-			"Apartment",
-			"apartment",
-			"clientvi",
-			"clientnew",
-			"client",
-			"apartment",
-			"Apartment",
-			"apartment",
-			"copy",
-			"apartment"
+			"kauppakirja"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1291,32 +1178,32 @@
 	"groups":
 	[
 		{
-			"selected": 28,
+			"selected": 14,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "client/particle.lua",
+					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 923,
+						"buffer_size": 687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								785,
-								785
+								478,
+								478
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 0,
-								"count": 66,
+								"changes": 4,
+								"count": 35,
 								"modified": false,
 								"selection": false,
 								"status": -1,
@@ -1324,190 +1211,69 @@
 							},
 							"git_gutter_is_enabled": true,
 							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 729.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "client/res/sounds/effects/effects.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 484,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								474,
-								472
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "client/entity.lua",
+					"buffer": 1,
+					"file": "game/gamestates/splash.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1386,
+						"buffer_size": 1109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1350,
-								1292
+								171,
+								171
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 25,
+								"count": 62,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1215.0,
+						"translation.y": 81.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "client/sti/init.lua",
+					"buffer": 2,
+					"file": "game/gamestates/menu.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 38541,
+						"buffer_size": 2472,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4733,
-								4733
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5436.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "client/sti/plugins/bump.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5924,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4391,
-								4391
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 38,
-								"count": 417,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3186.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "client/sti/plugins/navpath.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1563,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1021,
-								1021
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "client/projectile.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1122,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								818,
-								818
+								189,
+								189
 							]
 						],
 						"settings":
@@ -1515,7 +1281,161 @@
 							"WordCount":
 							{
 								"changes": 63,
-								"count": 75,
+								"count": 212,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "game/entities/player.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								389
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 304,
+								"count": 126,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "game/res/sounds/effects/effects.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								88,
+								88
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 50,
+								"count": 21,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "game/res/animations/bonfire.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 5,
+								"count": 9,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "game/entities/singoblisa.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								565,
+								565
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 1796,
+								"count": 166,
 								"modified": false,
 								"selection": false,
 								"status": -1,
@@ -1523,10 +1443,11 @@
 							},
 							"git_gutter_is_enabled": true,
 							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 422.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1534,177 +1455,223 @@
 				},
 				{
 					"buffer": 7,
-					"file": "client/systems/lifetimes.lua",
+					"file": "game/systems/platforms.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 288,
+						"buffer_size": 1000,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								288,
-								288
+								557,
+								557
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 40,
+								"count": 60,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 298.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "game/gamestates/victory.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								122,
+								122
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 485,
+								"count": 215,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
 							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "client/projectiles/knife.lua",
+					"buffer": 9,
+					"file": "game/gamestates/pause.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 686,
+						"buffer_size": 1267,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								295,
-								295
+								221,
+								221
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 151,
+								"count": 108,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 81.0,
+						"translation.y": 243.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "game/systems/spriterenderer.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								382,
+								382
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 10,
+								"count": 46,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "client/systems/attachs.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 703,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								277,
-								277
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "client/systems/deaths.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 251,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								222,
-								222
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
 					"buffer": 11,
-					"file": "client/entities/goblin.lua",
+					"file": "game/main.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1802,
+						"buffer_size": 1131,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1298,
-								1298
+								557,
+								557
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 154,
+								"count": 64,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 972.0,
+						"translation.y": 243.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 12,
-					"file": "client/res/animations/goblin.lua",
+					"file": "game/gamestates/settings.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 276,
+						"buffer_size": 3155,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								276,
-								276
+								104,
+								109
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 0,
-								"count": 20,
+								"changes": 1065,
+								"count": 252,
 								"modified": false,
 								"selection": false,
 								"status": -1,
@@ -1713,163 +1680,35 @@
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/SublimeLove/Love.tmLanguage"
 						},
-						"translation.x": 13.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
 					"buffer": 13,
-					"file": "client/systems/ais.lua",
+					"file": "game/res/sprites/entities.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1503,
+						"buffer_size": 646,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								449,
-								449
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 556.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "client/entities/player.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2444,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2333,
-								2333
+								646,
+								646
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 144,
-								"count": 115,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2106.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "client/res/animations/player.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								427,
-								427
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "client/res/sounds/boss/singoblisa.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 187,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								79,
-								79
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "client/animation.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1414,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								682,
-								682
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 0,
+								"changes": 90,
 								"count": 68,
 								"modified": false,
 								"selection": false,
@@ -1881,242 +1720,189 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 112.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "game/entities/goblin.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1302,
+								1302
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 4,
+								"count": 113,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "game/res/animations/singoblisa.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								232,
+								232
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 70,
+								"count": 13,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "game/res/sounds/boss/singoblisa.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								663,
+								663
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 506,
+								"count": 46,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "client/spritesheet.lua",
+					"buffer": 17,
+					"file": "game/gamestates/play.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 684,
+						"buffer_size": 11875,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								659,
-								659
+								2090,
+								2090
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 0,
-								"count": 37,
+								"changes": 638,
+								"count": 597,
 								"modified": false,
 								"selection": false,
 								"status": -1,
 								"syntax": "plain text"
 							},
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
 							"syntax": "Packages/SublimeLove/Love.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 39.0,
+						"translation.y": 1495.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
-					"file": "client/body.lua",
+					"buffer": 18,
+					"file": "game/res/sprites/projectiles.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 604,
+						"buffer_size": 127,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								566,
-								566
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 243.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "client/gamestates/splash.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								227,
-								227
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 34,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "client/gamestates/pause.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1156,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								265,
-								265
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 529.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "client/res/sprites/objects.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								256,
-								256
+								119,
+								119
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 38,
-								"count": 41,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "client/systems/platforms.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 966,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								229,
-								229
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 976,
-								"count": 57,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "client/systems/animations.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 360,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								300,
-								300
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 132,
+								"changes": 62,
 								"count": 17,
 								"modified": false,
 								"selection": false,
@@ -2130,131 +1916,32 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 25,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								116,
-								116
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 186.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 33,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"file": "client/systems/physics.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1680,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1003,
-								1003
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 950.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "client/gamestates/play.lua",
+					"buffer": 19,
+					"file": "game/res/animations/fireball.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11338,
+						"buffer_size": 80,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								210,
-								208
+								49,
+								49
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 470,
-								"count": 587,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6955.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "client/res/animations/bonfire.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 131,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								131,
-								131
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 73,
-								"count": 9,
+								"changes": 26,
+								"count": 6,
 								"modified": false,
 								"selection": false,
 								"status": -1,
@@ -2262,164 +1949,6 @@
 							},
 							"git_gutter_is_enabled": true,
 							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "client/res/sprites/entities.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								498
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "client/systems/homings.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								187,
-								187
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 31,
-					"file": "client/particles/soul.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 831,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								73,
-								73
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 243.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				},
-				{
-					"buffer": 32,
-					"file": "client/res/animations/soul.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 59,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								59,
-								59
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 0,
-								"count": 5,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 33,
-					"file": "client/res/sprites/particles.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 221,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
 							"syntax": "Packages/SublimeLove/Love.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -2430,117 +1959,230 @@
 					"type": "text"
 				},
 				{
-					"buffer": 34,
-					"file": "client/systems/spriterenderer.lua",
+					"buffer": 20,
+					"file": "game/projectiles/fireball.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 599,
+						"buffer_size": 1156,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								251
+								528,
+								528
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 267,
+								"count": 80,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
 							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 259.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
-					"file": "client/gamestates/menu.lua",
+					"buffer": 21,
+					"file": "game/projectiles/knife.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2436,
+						"buffer_size": 718,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								760,
-								760
+								377,
+								377
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 32,
+								"count": 39,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 810.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
-					"file": "client/gamestates/settings.lua",
+					"buffer": 22,
+					"file": "game/entity.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 655,
+						"buffer_size": 1440,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								50,
-								50
+								1404,
+								1352
 							]
 						],
 						"settings":
 						{
+							"WordCount":
+							{
+								"changes": 10,
+								"count": 97,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
 							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1458.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
-					"file": "client/conf.lua",
+					"buffer": 23,
+					"file": "game/projectile.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4046,
+						"buffer_size": 1175,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4046,
-								4046
+								1136,
+								1136
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
-							"open_with_edit": true,
+							"WordCount":
+							{
+								"changes": 4,
+								"count": 81,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 891.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "game/particle.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 977,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								642,
+								642
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 3,
+								"count": 72,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 729.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "ludumdare43.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								148,
+								148
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "json"
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -2548,7 +2190,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 25,
 					"type": "text"
 				}
 			]

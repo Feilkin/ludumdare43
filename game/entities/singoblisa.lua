@@ -36,6 +36,7 @@ function Singoblisa:initialize(world)
 				Signal.emit("play_sound", "boss", "turnip_theheat")
 			end
 			wait(2)
+			self.animation:switch("cast")
 			-- shoot fireballs everywhere
 			for i = 60, 290, 5 do
 				local a = math.rad(i)
@@ -53,6 +54,11 @@ function Singoblisa:initialize(world)
 				wait(0.01)
 			end
 
+			self.animation:switch("idle")
+			do
+				local tx, ty = world.player.body:getPos()
+				self.flip_x = self.body.position.x > tx
+			end
 			wait(3)
 			self.body:teleport(vector(248, 54)) -- go up
 			wait(2)
@@ -62,7 +68,8 @@ function Singoblisa:initialize(world)
 			end
 
 			-- drop teh bomb
-			for x = 37, 474, 5 do
+			self.animation:switch("cast")
+			for x = 37, 474, 7 do
 				local fireball = Fireball()
 				fireball.body:setPos(x, 175)
 				fireball.body.speed.x = 0
@@ -70,11 +77,17 @@ function Singoblisa:initialize(world)
 
 				world:addEntity(fireball)
 				Signal.emit("play_sound", "effects", "fireball_shoot")
-				wait(0.01)
+				wait(0.02)
+			end
+			self.animation:switch("idle")
+			do
+				local tx, ty = world.player.body:getPos()
+				self.flip_x = self.body.position.x > tx
 			end
 			wait(4)
 
 			-- try something cool
+			self.animation:switch("cast")
 			for i = 1, 10 do
 				local fireball = Fireball()
 				local px, py = self.body:getPos()
@@ -97,6 +110,11 @@ function Singoblisa:initialize(world)
 				Signal.emit("play_sound", "effects", "fireball_shoot")
 				wait(0.1)
 			end
+			self.animation:switch("idle")
+			do
+				local tx, ty = world.player.body:getPos()
+				self.flip_x = self.body.position.x > tx
+			end
 
 			wait(2)
 
@@ -116,6 +134,9 @@ end
 
 function Singoblisa:onDeath()
 	Signal.emit("enemy_died", self)
+	Timer.after(10, function()
+		Gamestate.switch(GAMESTATES.victory)
+	end)
 end
 
 return Singoblisa

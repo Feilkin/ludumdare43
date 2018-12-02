@@ -46,7 +46,7 @@ function Goblin:onCollide(col)
 	if col.other.is_player then
 		if (self.animation.current_animation == "stab" and self.animation.current_frame == 2) and
 			col.other:canTakeDamage() then
-			col.other:take_damage(1)
+			col.other:take_damage(3)
 			Signal.emit("spawn_blood", self, col, love.math.random(25, 30))
 		elseif self.attack_cooldown <= 0 then
 			self.animation:push("stab")

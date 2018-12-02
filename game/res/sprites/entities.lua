@@ -17,4 +17,5 @@ return {
 	-- singoblisa
 	singoblisa_idle_1 = { 0, 64, 32, 48 },
 	singoblisa_idle_2 = { 32, 64, 32, 48 },
+	singoblisa_cast_1 = { 64, 64, 32, 48 },
 }

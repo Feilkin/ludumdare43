@@ -11,7 +11,7 @@ function Fireball:initialize()
 	Projectile.initialize(self, vector(3, 3), "fireball_1")
 	self.body.acceleration.y = 0
 	self.team = "goblin"
-	self.damage = 3
+	self.damage = 2
 	self.animation = Animation("res/animations/fireball.lua", "idle")
 end
 
