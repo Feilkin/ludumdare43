@@ -10,7 +10,7 @@
         {
             "name": "Run client",
             "shell_cmd": "love .",
-            "working_dir": "${project_path}/client"
+            "working_dir": "${project_path}/game"
         }
     ]
 }
